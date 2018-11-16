@@ -1,7 +1,6 @@
 'use strict'
 let num = 33721;
-let arr = [];
-arr = num.toString().split('');
+let arr = num.toString().split('');
 
 var mult = +arr[0];
 

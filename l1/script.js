@@ -6,6 +6,7 @@ let question2 = prompt("Во сколько обойдется?");
 let question3 = prompt("Введите обязательную статью расходов в этом месяце");
 let question4 = prompt("Во сколько обойдется?");
 let arrIncome = [];
+
 let appData = {
  budget: money,
  timeData: time,

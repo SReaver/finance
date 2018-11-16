@@ -16,8 +16,8 @@ let appData = {
  savings: false
 };
 
-appData.expenses['Введите обязательную статью расходов в этом месяце'] = answer1;
-appData.expenses['Во сколько обойдется?'] = answer2;
-appData.expenses['Введите обязательную статью расходов в этом месяце'] = answer3;
-appData.expenses['Во сколько обойдется?'] = answer4;
+appData.expenses[answer1] = answer2;
+appData.expenses[answer3] = answer4;
+//appData.expenses['Введите обязательную статью расходов в этом месяце'] = answer2;
+//appData.expenses['Во сколько обойдется?'] = answer4;
 alert("Ваш бюджет на 1 день: " + money / 30);

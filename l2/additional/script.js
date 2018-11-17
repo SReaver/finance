@@ -1,10 +1,10 @@
 'use strict'
 let week = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
 let today = new Date();
-
+//alert(today.getDay());
 for (let i = 0; i < week.length; i++) {
  if (i == week.length - 1 || i == week.length - 2) {
-  if (i == today.getDay() - 1) {
+  if (i == today.getDay() - 1 || i == today.getDay() + 6) {
    document.write(week[i].italics().bold() + '<br>');
   } else {
    document.write(week[i].bold() + '<br>');

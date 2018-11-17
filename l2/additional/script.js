@@ -1,23 +1,5 @@
 'use strict'
 let week = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
-/*
-let arr = week[0];
-let i = 1;
-while (week[i]) {
- arr = arr + ', ' + week[i];
- i++;
-}
-alert(arr);
-
-let arr1 = week[0];
-let j = 1;
-do {
- arr1 = arr1 + ',\n' + week[j];
- j++;
-}
-while (week[j])
-alert(arr1);
-*/
 let today = new Date();
 
 for (let i = 0; i < week.length; i++) {

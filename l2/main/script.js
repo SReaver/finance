@@ -12,8 +12,8 @@ let appData = {
  income: [],
  savings: false
 };
-
-/*for (let i = 0; i < 2; i++) {
+/*
+for (let i = 0; i < 2; i++) {
  let a = prompt("Введите обязательную статью расходов в этом месяце"),
   b = prompt("Во сколько обойдется?");
  if ((typeof (a)) === 'string' && (typeof (a)) != null && (typeof (b)) != null &&
@@ -21,7 +21,9 @@ let appData = {
   console.log("done");
   appData.expenses[a] = b;
  } else {
+
   i--;
+
  }
 };
 */
@@ -36,10 +38,13 @@ while (i < 2) {
   appData.expenses[a] = b;
   i++;
  } else {
-  i--;
+  if (i < 0) {
+   i--;
+  };
  }
 }
 */
+
 let i = 0;
 do {
  let a = prompt("Введите обязательную статью расходов в этом месяце"),
@@ -50,7 +55,9 @@ do {
   appData.expenses[a] = b;
   i++;
  } else {
-  i--;
+  if (i < 0) {
+   i--;
+  };
  }
 } while (i < 2);
 

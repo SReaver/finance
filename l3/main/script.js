@@ -74,9 +74,10 @@ do {
 */
 
 
-appData.moneyPerDay = (appData.budget / 30).toFixed(); //возвращает строковое значение
+
 
 function detectDayBudget() {
+ appData.moneyPerDay = (appData.budget / 30).toFixed(); //возвращает строковое значение
  alert("Ежедневный бюджет: " + appData.moneyPerDay);
 }
 //detectDayBudget();

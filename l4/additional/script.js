@@ -1,5 +1,5 @@
 'use strict'
-let str = "урок - 3 - был слишком легким";
+/*let str = "урок - 3 - был слишком легким";
 
 str = str[0].toUpperCase() + str.slice(1);
 alert(str);
@@ -8,10 +8,10 @@ alert(str);
 console.log(str);
 str = str.slice(str.indexOf('легким'));
 console.log(str);
-str = str.replace(/им/g, "о");
+str = str.replace(/[и, м]/g, "о");
 alert(str);
+*/
 
-/*
 let arr = [20, 33, 1, "Человек", 2, 3];
 let sum = 0;
 for (let i = 0; i < arr.length; i++) {
@@ -36,4 +36,3 @@ function inputParam(param) {
 
 
 inputParam("   Отладка – неотъемлемая часть программирования. Главный помощник JavaScript джуниора – консоль  разработчика Google Chrome. Чем быстрее вы с ней подружитесь, тем эффективнее будет ваша работа.    ");
-*/

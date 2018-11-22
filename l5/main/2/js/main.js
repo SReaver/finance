@@ -1,4 +1,4 @@
-let startButton = document.getElementById("start");
+let btnStart = document.getElementById("start");
 
 let budgetValue = document.getElementsByClassName("budget-value");
 let dayBudgetValue = document.getElementsByClassName("daybudget-value");
@@ -12,17 +12,18 @@ let yearValue = document.getElementsByClassName("year-value");
 let monthValue = document.getElementsByClassName("month-value");
 let dayValue = document.getElementsByClassName("day-value");
 
-let expensesInput = document.getElementsByClassName("expenses-item");
+let inputExpenses = document.getElementsByClassName("expenses-item");
 
-let submitOptionalExpensesBtn = document.getElementsByTagName("optionalexpenses-btn");
-let countBudgetBtn = document.getElementsByTagName("count-budget-btn");
+let buttons = document.getElementsByTagName("button");
+let btnSubmitOptionalExpenses = buttons[1];
+let btnCountBudget = buttons[2];
 
 let optionalExpensesInput = document.querySelectorAll(".optionalexpenses-item");
 
-let chooseIncomeText = document.querySelector(".choose-income");
-let chbSavings = document.querySelector(".savings");
-let chooseSumText = document.querySelector(".choose-sum");
-let choosePercentText = document.querySelector(".choose-percent");
-let yearInput = document.querySelector(".year-value");
-let monthInput = document.querySelector(".month-value");
-let dayInput = document.querySelector(".day-value");
+let txtChooseIncome = document.querySelector(".choose-income");
+let chbSavings = document.querySelector("#savings");
+let txtChooseSum = document.querySelector(".choose-sum");
+let txtChoosePercent = document.querySelector(".choose-percent");
+let inputYear = document.querySelector(".year-value");
+let inputMonth = document.querySelector(".month-value");
+let inputDay = document.querySelector(".day-value");

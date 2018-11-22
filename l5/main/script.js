@@ -69,22 +69,13 @@ let appData = {
   if (typeof (items) != "string" || items == null || items == "") {
    this.chooseIncome();
   } else {
-
-   items.trim().split(',')
-    .forEach(function (item) {
-     if (appData.income.indexOf(item.trim()) == -1) {
-      appData.income.push(item.trim());
-     }
-    });
-
-   let additionalIncome = prompt('Может что-то ещё?').trim().split(',');
+   appData.income = items.trim().split(', ');
+   let additionalIncome = prompt('Может что-то ещё?').trim().split(', ');
    additionalIncome.forEach(function (item) {
-    if (appData.income.indexOf(item.trim()) == -1) {
-     appData.income.push(item.trim());
-    }
+    appData.income.push(item);
    });
    appData.income.sort();
-   document.write("Способы доп. заработка:<br>");
+   document.write("Способы доп. заработка: <br>");
    appData.income.forEach(function (item, i) {
     document.write((i + 1) + ": " + item + "<br>");
    });

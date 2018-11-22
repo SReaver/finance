@@ -70,19 +70,19 @@ let appData = {
    this.chooseIncome();
   } else {
 
-   items.trim().split(',')
-    .forEach(function (item) {
-     if (appData.income.indexOf(item.trim()) == -1) {
-      appData.income.push(item.trim());
-     }
-    });
+   function addToArray(arr) {
+    arr.trim().split(',')
+     .forEach(function (item) {
+      if (appData.income.indexOf(item.trim()) == -1) {
+       appData.income.push(item.trim());
+      }
+     });
+   }
+   addToArray(items);
 
-   let additionalIncome = prompt('Может что-то ещё?').trim().split(',');
-   additionalIncome.forEach(function (item) {
-    if (appData.income.indexOf(item.trim()) == -1) {
-     appData.income.push(item.trim());
-    }
-   });
+   let additionalIncome = prompt('Может что-то ещё?');
+   addToArray(additionalIncome);
+
    appData.income.sort();
    document.write("Способы доп. заработка:<br>");
    appData.income.forEach(function (item, i) {

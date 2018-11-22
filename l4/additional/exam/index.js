@@ -7,6 +7,9 @@ function getFriendlyNumbers(start, end) {
     } else {
         //функция определяющая дружественные числа
 
+        function numCompare() {
+
+        }
         //функция определяющая делители
         function getDevisors(num) {
             let arr = [];

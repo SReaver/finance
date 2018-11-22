@@ -70,7 +70,10 @@ let appData = {
    this.chooseIncome();
   } else {
    appData.income = items.trim().split(', ');
-   appData.income.push(prompt('Может что-то ещё?'));
+   let additionalIncome = prompt('Может что-то ещё?').trim().split(', ');
+   additionalIncome.forEach(function (item) {
+    appData.income.push(item);
+   });
    appData.income.sort();
    document.write("Способы доп. заработка: <br>");
    appData.income.forEach(function (item, i) {
@@ -83,14 +86,12 @@ let appData = {
 };
 console.log("Наша программа включает в себя данные: ");
 for (let key in appData) {
- if (typeof (appData[key])=="object") {
+ if (typeof (appData[key]) == "object") {
   console.log("Свойство " + key + " является объектом");
  } else if (typeof (appData[key]) == "function") {
   console.log("Свойство " + key + " является функцией");
- }
- else
- {
- console.log("Свойство "+key + " имеет значение "+ appData[key]);
+ } else {
+  console.log("Свойство " + key + " имеет значение " + appData[key]);
  }
 }
 

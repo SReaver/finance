@@ -102,8 +102,8 @@ btnExpensesItem.addEventListener('click', function () {
                 b = inputExpenses[i + 1].value;
             if ((typeof (a)) === 'string' && (typeof (a)) != null && (typeof (b)) != null && a != '' && b != '' && a.length < 50) {
                 //console.log("done");
-                console.log(a);
-                console.log(b);
+                //console.log(a);
+                //console.log(b);
                 appData.expenses[a] = b;
                 sum += +b;
             } else {
@@ -119,9 +119,14 @@ btnExpensesItem.addEventListener('click', function () {
 });
 
 btnSubmitOptionalExpenses.addEventListener('click', function () {
+    appData.optionalExpenses = [];
+    optionalExpensesValue.textContent = '';
     for (let i = 0; i < optionalExpensesInput.length; i++) {
         let item = optionalExpensesInput[i].value;
         appData.optionalExpenses[i] = item;
+        //optionalExpensesValue.textContent += appData.optionalExpenses[i] + " ";
+    }
+    for (let i = 0; i < appData.optionalExpenses.length; i++) {
         optionalExpensesValue.textContent += appData.optionalExpenses[i] + " ";
     }
 });
@@ -134,7 +139,7 @@ btnCountBudget.addEventListener("click", function () {
         if (appData.expensesValue != NaN || appData.expensesValue != []) {
             bdgSum = appData.expensesValue;
         }
-        console.log(appData.budget - bdgSum);
+        //console.log(appData.budget - bdgSum);
         appData.moneyPerDay = ((appData.budget - bdgSum) / 30).toFixed();
 
         dayBudgetValue.textContent = appData.moneyPerDay;
@@ -221,15 +226,43 @@ txtChoosePercent.addEventListener('input', function () {
     }
 });
 
-let inputs = document.querySelectorAll('input');
+//let inputsOptionalExpenses = document.querySelectorAll(".optionalexpenses-item");
 
-inputs.forEach(function (item) {
-    item.addEventListener("keydown", function (event) {
-        if (event.target.charCode > 122) {
-            console.log("Super!");
+optionalExpensesInput.forEach(function (item) {
+    item.addEventListener("keyup", function () {
+        //if (!/^[?!,.а-яА-ЯёЁ\s]+$/.test(item.value)) {
+        if (!/^[а-яА-ЯёЁ\s]+$/.test(item.value)) {
+            item.value = '';
+            btnSubmitOptionalExpenses.disabled = true;
+        }
+    });
+    item.addEventListener("change", function () {
+        if (!/^[а-яА-ЯёЁ\s]+$/.test(item.value)) {
+            item.value = '';
+            btnSubmitOptionalExpenses.disabled = true;
         }
     });
 });
+
+for (let i = 1; i < inputExpenses.length; i += 2) {
+    inputExpenses[i].addEventListener('input', function (item) {
+        if (!(/^-?\d*\.?\d*$/.test(item.value))) {
+            console.log("Введены не цифры");
+            item.value = '';
+        }
+    });
+}
+
+optionalExpensesInput.forEach(function (item) {
+    item.addEventListener("input", function () {
+        if (item.value.length > 0) {
+            btnSubmitOptionalExpenses.disabled = false;
+        } else {
+            btnSubmitOptionalExpenses.disabled = true;
+        }
+    });
+});
+
 
 let appData = {
     budget: money,

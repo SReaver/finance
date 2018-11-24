@@ -133,13 +133,18 @@ btnSubmitOptionalExpenses.addEventListener('click', function () {
 
 btnCountBudget.addEventListener("click", function () {
 
-    if (appData.budget != undefined) {
-
+    if (appData.budget) {
+        console.log("Бабла: " + appData.budget);
+        console.log(appData.expensesValue);
         let bdgSum = 0;
-        if (appData.expensesValue != NaN || appData.expensesValue != []) {
+        if (appData.expensesValue) {
+            //if (appData.expensesValue != undefined || appData.expensesValue != [] || appData.expensesValue != "" || !isNaN(appData.expensesValue)) {
+
             bdgSum = appData.expensesValue;
+            console.log("Проверка вхождения в условие");
         }
-        //console.log(appData.budget - bdgSum);
+        console.log("bdgSum равна: " + bdgSum);
+        console.log("Разница бабла: " + (appData.budget - bdgSum));
         appData.moneyPerDay = ((appData.budget - bdgSum) / 30).toFixed();
 
         dayBudgetValue.textContent = appData.moneyPerDay;
@@ -151,7 +156,7 @@ btnCountBudget.addEventListener("click", function () {
         } else if (appData.moneyPerDay > 2000) {
             levelValue.textContent = "высокий уровень достатка";
         } else {
-            levelValue.textContent = "Произошла ошибка";
+            levelValue.textContent = "Произошла небольшая ошибка";
         }
     } else {
         dayBudgetValue.textContent = "Произошла ошибка";

@@ -245,10 +245,9 @@ optionalExpensesInput.forEach(function (item) {
 });
 
 for (let i = 1; i < inputExpenses.length; i += 2) {
-    inputExpenses[i].addEventListener('input', function (item) {
-        if (!(/^-?\d*\.?\d*$/.test(item.value))) {
-            console.log("Введены не цифры");
-            item.value = '';
+    inputExpenses[i].addEventListener('keyup', function (item) {
+        if (!/^-?\d*\.?\d*$/.test(item.key)) {
+            inputExpenses[i].value = '';
         }
     });
 }

@@ -160,32 +160,20 @@ btnCountBudget.addEventListener("click", function () {
 
 });
 
+
 txtChooseIncome.addEventListener('change', function () {
     let items = txtChooseIncome.value;
-    if (typeof (items) != "string" || items == null || items == "") {
-        this.chooseIncome();
-    } else {
 
-        function addToArray(arr) {
-            arr.trim().split(',')
-                .forEach(function (item) {
-                    if (appData.income.indexOf(item.trim()) == -1) {
-                        appData.income.push(item.trim());
-                    }
-                });
-        }
+    function addToArray(arr) {
+        arr.trim().split(',')
+            .forEach(function (item) {
+                if (appData.income.indexOf(item.trim()) == -1) {
+                    appData.income.push(item.trim());
+                }
+            });
+    }
+    if (typeof (items) == "string" && items != null && items != "") {
         addToArray(items);
-
-        // let additionalIncome = prompt('Может что-то ещё?');
-        // addToArray(additionalIncome);
-
-        // appData.income.sort();
-        // document.write("Способы доп. заработка:<br>");
-        // appData.income.forEach(function (item, i) {
-        // 	document.write((i + 1) + ": " + item + "<br>");
-        // });
-
-
     }
 });
 

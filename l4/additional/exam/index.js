@@ -1,15 +1,25 @@
 function getFriendlyNumbers(start, end) {
-    function isInteger(num) {
-        return (num ^ 0) === num;
-    }
-    if (start > end || start < 0 || end < 0 || isNaN(start) || isNaN(end) || isInteger(start) || isInteger(end) || start == null || end == null) {
+
+    if (start > end || start < 0 || end < 0 || isNaN(start) || isNaN(end) || start == null || end == null) {
         return false;
     } else {
         //функция определяющая дружественные числа
-
-        function numCompare() {
-
+        let friends = [];
+        let dd = [];
+        for (let i = start; i < end; i++) {
+            for (let j = start; j < end; j++) {
+                if (i == j) {
+                    continue;
+                }
+                if ((getSum(getDevisors(j)) == i && getSum(getDevisors(i)) == j)) {
+                    if (dd.indexOf(i) == -1) {
+                        dd.push(j);
+                        friends.push([i, j]);
+                    }
+                }
+            }
         }
+
         //функция определяющая делители
         function getDevisors(num) {
             let arr = [];
@@ -28,9 +38,8 @@ function getFriendlyNumbers(start, end) {
                 sum = sum + item;
             });
             return sum;
-            //console.log(sum);
         }
-
+        return friends;
     }
 }
 

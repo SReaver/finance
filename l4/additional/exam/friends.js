@@ -1,13 +1,13 @@
-function getFriendlyNumbers(start, end) {
+﻿function getFriendlyNumbers(start, end) {
 
-	if (start > end || start < 0 || end < 0 || isNaN(start) || isNaN(end) || start == null || end == null) {
+	if (typeof start == "string" || typeof end == "string" || start > end || start < 0 || end < 0 || isNaN(start) || isNaN(end) || start == null || end == null) {
 		return false;
 	} else {
 		//функция определяющая дружественные числа
 		let friends = [];
 		let dd = [];
 		for (let i = start; i < end; i++) {
-			for (let j = start; j < end; j++) {
+			for (let j = start; j <= end; j++) {
 				if (i == j) {
 					continue;
 				}
@@ -44,4 +44,4 @@ function getFriendlyNumbers(start, end) {
 		console.log(friends);
 	}
 }
-getFriendlyNumbers(1, 300);
+getFriendlyNumbers(1, 1211);

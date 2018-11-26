@@ -11,10 +11,13 @@
 				if (i == j) {
 					continue;
 				}
+				console.log("i:" + i + " | j: " + j);
 				if ((getSum(getDevisors(j)) == i && getSum(getDevisors(i)) == j)) {
 					if (dd.indexOf(i) == -1) {
 						dd.push(j);
 						friends.push([i, j]);
+						i = j;
+
 					}
 				}
 			}

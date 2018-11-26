@@ -15,6 +15,7 @@ function getFriendlyNumbers(start, end) {
                     if (dd.indexOf(i) == -1) {
                         dd.push(j);
                         friends.push([i, j]);
+                        i = j;
                     }
                 }
             }

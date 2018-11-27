@@ -78,3 +78,6 @@ if (appData.moneyPerDay < 100) {
 } else {
  console.log("Произошла ошибка");
 }
+
+let name = "пупкин".replace("п", "д");
+console.log(name);
